@@ -1,6 +1,6 @@
 package com.akshat.jindal.retrofittutorial
 
-import com.akshat.jindal.retrofittutorial.Models.User
+import com.akshat.jindal.retrofittutorial.Models.UserItem
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -17,5 +17,5 @@ interface RetrofitService {
 
 
     @GET("users")
-    fun getUsers(): List<User>
+    fun getUsers(): List<UserItem>
 }
