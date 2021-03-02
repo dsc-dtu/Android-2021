@@ -1,4 +1,4 @@
-package com.akshat.jindal.retrofittutorial.Networking
+package com.dtu.dsc.retrofittutorial.Networking
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

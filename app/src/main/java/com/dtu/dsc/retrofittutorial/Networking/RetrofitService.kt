@@ -1,11 +1,8 @@
-package com.akshat.jindal.retrofittutorial.Networking
+package com.dtu.dsc.retrofittutorial.Networking
 
-import com.akshat.jindal.retrofittutorial.Models.UserItem
+import com.dtu.dsc.retrofittutorial.Models.UserItem
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RetrofitService {

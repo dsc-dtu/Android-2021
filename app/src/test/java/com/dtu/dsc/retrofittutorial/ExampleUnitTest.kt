@@ -1,4 +1,4 @@
-package com.akshat.jindal.retrofittutorial
+package com.dtu.dsc.retrofittutorial
 
 import org.junit.Test
 
