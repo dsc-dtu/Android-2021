@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akshat.jindal.retrofittutorial.Models.UserItem
+import com.akshat.jindal.retrofittutorial.Networking.APIService
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_item.view.*
@@ -25,7 +26,32 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        RetrofitService.getAPIService().getUsers().enqueue(object : Callback<List<UserItem>> {
+        /**
+         * Old and inefficient method due to static nature
+         * */
+        /*RetrofitService.getAPIService().getUsers().enqueue(object : Callback<List<UserItem>> {
+            override fun onFailure(call: Call<List<UserItem>>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "Error Occurred", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(
+                call: Call<List<UserItem>>,
+                response: Response<List<UserItem>>
+            ) {
+                if (response.isSuccessful) {
+                    val userList = response.body()
+                    recyclerView.adapter =
+                        UserAdapter(context = this@MainActivity, userList = userList.orEmpty())
+                }
+
+            }
+        })*/
+
+        /**
+         * new and efficient method as it does not create the object till it is used for the first time
+         *
+         * */
+        APIService.API.getUsers().enqueue(object : Callback<List<UserItem>> {
             override fun onFailure(call: Call<List<UserItem>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Error Occurred", Toast.LENGTH_SHORT).show()
             }

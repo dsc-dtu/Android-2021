@@ -1,4 +1,4 @@
-package com.akshat.jindal.retrofittutorial
+package com.akshat.jindal.retrofittutorial.Networking
 
 import com.akshat.jindal.retrofittutorial.Models.UserItem
 import retrofit2.Call
@@ -12,10 +12,10 @@ interface RetrofitService {
 
     companion object {
 
-        fun getAPIService(): RetrofitService = Retrofit.Builder().baseUrl("https://api.github.com/")
+/*        fun getAPIService(): RetrofitService = Retrofit.Builder().baseUrl("https://api.github.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(RetrofitService::class.java)
+            .create(RetrofitService::class.java)*/
     }
 
 
