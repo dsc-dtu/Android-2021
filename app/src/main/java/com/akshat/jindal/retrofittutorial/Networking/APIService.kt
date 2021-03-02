@@ -11,6 +11,5 @@ object APIService {
             .build()
     }
 
-    val API: RetrofitService by lazy { getRetrofit()
-        .create(RetrofitService::class.java) }
+    val API: RetrofitService by lazy { getRetrofit().create(RetrofitService::class.java) }
 }
