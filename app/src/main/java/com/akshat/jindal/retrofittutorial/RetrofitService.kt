@@ -12,7 +12,7 @@ interface RetrofitService {
 
     companion object {
 
-        fun getAPIService() = Retrofit.Builder().baseUrl("https://api.github.com/")
+        fun getAPIService(): RetrofitService = Retrofit.Builder().baseUrl("https://api.github.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetrofitService::class.java)
