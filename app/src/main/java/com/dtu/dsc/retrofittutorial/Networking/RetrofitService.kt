@@ -17,5 +17,5 @@ interface RetrofitService {
 
 
     @GET("users")
-    fun getUsers(@Query("per_page") perPage: Int = 100): Call<List<UserItem>>
+    fun getUsers(): Call<List<UserItem>>
 }

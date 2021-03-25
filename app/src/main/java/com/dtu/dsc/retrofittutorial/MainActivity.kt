@@ -58,6 +58,8 @@ class MainActivity : AppCompatActivity() {
                     val userList = response.body()
                     recyclerView.adapter =
                         UserAdapter(context = this@MainActivity, userList = userList.orEmpty())
+                }else{
+
                 }
 
             }
